@@ -1,4 +1,4 @@
-from utodidacta import *
+from autodidacta import *
 
 
 v=Visualizacion()
