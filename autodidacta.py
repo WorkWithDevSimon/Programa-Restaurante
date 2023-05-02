@@ -38,7 +38,7 @@ class Visualizacion():
             elif nombre=="juan" and contraseña=="2":
                 administrador()
             
-            elif nombre=="julian" and contraseña=="3":
+            elif nombre=="victor" and contraseña=="3":
                 chef()
 
             
@@ -142,6 +142,106 @@ class Visualizacion():
             window2.configure(background=pantllaColor)
             window2.resizable(width=False,height=False)
             Label(window2,text="Chef",font=20,pady=10,background=pantllaColor,foreground="#00fcf1").pack()
+            def salirPrograma():
+                window2.destroy()
+            # --------------------------------------------------------------------------------------------------------------
+            # boton Menu.
+
+            def menuChef():
+            # crear la nueva ventana hija
+                window2.destroy()
+                ventanMenu=Tk()
+                ventanMenu.title("Usuario")
+                ventanMenu.geometry("500x500+500+50")
+                ventanMenu.configure(background=pantllaColor)
+                ventanMenu.resizable(width=False,height=False)
+                Label(ventanMenu,text="Chef",font=20,pady=10,background=pantllaColor,foreground="#00fcf1").pack()
+                tabla=Treeview(ventanMenu)
+                tabla["column"]=("ID","Nombre","Apellido","Edad","awdawd","nada")
+                #Definir tamaño
+                tabla.column(column="#0",width=10)
+                tabla.column(column="ID",width=70)
+                tabla.column(column="Nombre",width=70)
+                tabla.column(column="Apellido",width=70)
+                tabla.column(column="Edad",width=70)
+                tabla.column(column="awdawd",width=70)
+                tabla.column(column="nada",width=70)
+                
+            
+                tabla.heading(column="#0",text="")
+                tabla.heading(column="ID",text="valor")
+                tabla.heading(column="Nombre",text="precio")
+                tabla.heading(column="Apellido",text="precio")
+                tabla.heading(column="Edad",text="precio")
+                tabla.heading(column="awdawd",text="precio")
+                tabla.heading(column="nada",text="precio")
+                tabla.pack()
+                # tabla.place(x=35,y=250)
+                def salirPrograma():
+                    ventanMenu.destroy()
+                botonSalir=Button(ventanMenu,text="Salir",command=salirPrograma,cursor="hand2",width=10)
+                botonSalir.place(x=310,y=405)
+                ventanMenu.mainloop()
+
+            botonMenu=Button(window2,text="Menu",command=menuChef,cursor="hand2",width=10)
+            botonMenu.place(x=0,y=0)
+             # -------------------------------------------------------------------------------------------------------------- 
+             #  boton actualizar. 
+            def actualizar():
+                window2.destroy()
+                ventanActualizar=Tk()
+                ventanActualizar.title("Usuario")
+                ventanActualizar.geometry("500x500+500+50")
+                ventanActualizar.configure(background=pantllaColor)
+                ventanActualizar.resizable(width=False,height=False)
+                Label(ventanActualizar,text="Chef",font=20,pady=10,background=pantllaColor,foreground="#00fcf1").pack()
+                def salirPrograma():
+                    ventanActualizar.destroy()
+                botonSalir=Button(ventanActualizar,text="Salir",command=salirPrograma,cursor="hand2",width=10)
+                botonSalir.place(x=310,y=405)
+                ventanActualizar.mainloop()
+
+            botonMenu=Button(window2,text="Actualizar",command=actualizar,cursor="hand2",width=10)
+            botonMenu.place(x=0,y=100)
+            #-------------------------------------------------------------------------------------------------------------
+             #  boton actualizar. 
+            def actualizar():
+                window2.destroy()
+                ventanActualizar=Tk()
+                ventanActualizar.title("Usuario")
+                ventanActualizar.geometry("500x500+500+50")
+                ventanActualizar.configure(background=pantllaColor)
+                ventanActualizar.resizable(width=False,height=False)
+                Label(ventanActualizar,text="Chef",font=20,pady=10,background=pantllaColor,foreground="#00fcf1").pack()
+                def salirPrograma():
+                    ventanActualizar.destroy()
+                botonSalir=Button(ventanActualizar,text="Salir",command=salirPrograma,cursor="hand2",width=10)
+                botonSalir.place(x=310,y=405)
+                ventanActualizar.mainloop()
+
+            botonactu=Button(window2,text="Actualizar",command=actualizar,cursor="hand2",width=10)
+            botonactu.place(x=0,y=100)
+            #-------------------------------------------------------------------------------------------------------------
+            #  boton nose que poner aqui. 
+            def actualizar():
+                window2.destroy()
+                ventananose=Tk()
+                ventananose.title("Usuario")
+                ventananose.geometry("500x500+500+50")
+                ventananose.configure(background=pantllaColor)
+                ventananose.resizable(width=False,height=False)
+                Label(ventananose,text="Chef",font=20,pady=10,background=pantllaColor,foreground="#00fcf1").pack()
+                def salirPrograma():
+                    ventananose.destroy()
+                botonSalir=Button(ventananose,text="Salir",command=salirPrograma,cursor="hand2",width=10)
+                botonSalir.place(x=310,y=405)
+                ventananose.mainloop()
+
+            botonNose=Button(window2,text="nose",command=actualizar,cursor="hand2",width=10)
+            botonNose.place(x=0,y=200)
+
+            window2.mainloop()
+
             
             
 
