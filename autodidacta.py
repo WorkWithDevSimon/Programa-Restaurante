@@ -23,6 +23,7 @@ class Visualizacion():
 
         pantalla=Frame(ventana,bg=pantllaColor ,width=500,height=500)
         pantalla.pack()
+        # aaaa
 
 
 
