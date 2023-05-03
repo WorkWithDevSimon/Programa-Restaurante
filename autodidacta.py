@@ -13,7 +13,6 @@ class Visualizacion():
         ventana.resizable(width=False,height=False)
 
         #colores
-
         fondo_entrar ="#00fcf1"
         fondo_salir = "#00fcf1"
 
@@ -22,9 +21,6 @@ class Visualizacion():
 
         pantalla=Frame(ventana,bg=pantllaColor ,width=500,height=500)
         pantalla.pack()
-        # aaaa
-
-
 
         def login():
             # ESTE ES EL LOGIN INICIAL DONDE EL USUARIO PUEDE INGRESAR
@@ -35,23 +31,26 @@ class Visualizacion():
                 Call_Center()
             elif nombre=="juan" and contraseña=="2":
                 administrador()
-            
-            elif nombre=="v" and contraseña=="":
+            elif nombre=="" and contraseña=="":
                 chef()
+            elif nombre=="1" and contraseña=="2":
+                chefCocina1()
+            elif nombre=="3" and contraseña=="4":
+                chefPlatos2()
+            elif nombre=="5" and contraseña=="6":
+                chefNose()
+           
 
-
-            
             else:
                 incorrecto=Label(ventana,text=" Usuario o contraseña incorrecta",fg="red",background=pantllaColor,font=("calibri",13))
                 incorrecto.place(x=140,y=280)
 
-        # AQUI ESTA TODODEL CALL CENTER SI SE NECESITA MODIFICAR ALGO SE HACE AQUI
-        # DENTRO DEL DEF EN NINGUN LADO MAS 
+#-----------------------------------------------------------------------------------------------------------------------------------------
+    # CALL CENTER
+     # CALL CENTER
         def Call_Center():
             # destruir la ventana padre
             ventana.destroy()
-
-            # crear la nueva ventana hija
             window=Tk()
             window.title("Usuario")
             window.geometry("700x500+500+50")
@@ -60,7 +59,7 @@ class Visualizacion():
             Label(window,text="CALL-CENTER",font=30,background=pantllaColor,foreground="#00fcf1").pack()
             
             
-            # Nombre
+            # Nombre.
             Label(window,text="Nombre",font=5,pady=10,background=pantllaColor,foreground="#00fcf1").place(x=230,y=80)
             nomEntry=Entry(window,bg=pantllaColor,foreground="#00fcee",font=("calibri",10))
             nomEntry.place(x=310,y=93)
@@ -71,16 +70,15 @@ class Visualizacion():
             claEntry.place(x=310,y=130)
             claEntry.configure(highlightthickness=2, highlightbackground="#00fcee")
 
-            #Boton
-            Button(window,text="Actualizar",width=10).place(x=380,y=200)
+            #Botones.
+            boton1=Button(window,text="Actualizar",width=10)
+            boton1.place(x=380,y=200)
             Button(window,text="Eliminar",width=10).place(x=200 ,y=200)
-
-
-           
 
 
             def salirCall():
                 window.destroy()
+
             # agregar los widgets a la nueva ventana hija
             boton3=Button(window,text="salir",command=salirCall,cursor="hand2",width=10)
             boton3.place(x=470,y=200)
@@ -149,10 +147,10 @@ class Visualizacion():
             tabla.place(x=13,y=250)
             
             window.mainloop()
-        # ------------------------------------------------------------------------------------------------------
-         # AQUI ESTA TODO_DEL administrador SI SE NECESITA MODIFICAR ALGO SE HACE AQUI
+#-----------------------------------------------------------------------------------------------------------------------------------------
+        # AQUI ESTA TODO_DEL administrador SI SE NECESITA MODIFICAR ALGO SE HACE AQUI
         # DENTRO DEL DEF EN NINGUN LADO MAS 
-            
+
         def administrador():
             ventana.destroy()
             
@@ -164,13 +162,13 @@ class Visualizacion():
             window2.configure(background=pantllaColor)
             window2.resizable(width=False,height=False)
             Label(window2,text="Administrador",font=20,pady=10,background=pantllaColor,foreground="#00fcf1").pack()
-
+#-----------------------------------------------------------------------------------------------------------------------------------------
          # AQUI ESTA TODO_DEL CHEF SI SE NECESITA MODIFICAR ALGO SE HACE AQUI
         # DENTRO DEL DEF EN NINGUN LADO MAS 
+         # CHEF
+        #  CHEF
         def chef():
             ventana.destroy()
-
-            # crear la nueva ventana hija
             window2=Tk()
             window2.title("Usuario")
             window2.geometry("700x500+500+50")
@@ -178,36 +176,30 @@ class Visualizacion():
             window2.resizable(width=False,height=False)
             Label(window2,text="CHEF",font=30,background=pantllaColor,foreground="#00fcf1").pack()
             
-            
             # Nombre
-            Label(window2,text="Nombre",font=5,pady=10,background=pantllaColor,foreground="#00fcf1").place(x=230,y=80)
+            Label(window2,text="Nombre",font=5,pady=10,background=pantllaColor,foreground="#00fcf1").place(x=230,y=60)
             nomEntry=Entry(window2,bg=pantllaColor,foreground="#00fcee",font=("calibri",10))
-            nomEntry.place(x=310,y=93)
+            nomEntry.place(x=310,y=73)
             nomEntry.configure(highlightthickness=2, highlightbackground="#00fcee")
             # clave
-            Label(window2,text="Clave",font=16,pady=10,background=pantllaColor,foreground="#00fcf1").place(x=250,y=120)
+            Label(window2,text="Clave",font=16,pady=10,background=pantllaColor,foreground="#00fcf1").place(x=250,y=96)
             claEntry=Entry(window2,bg=pantllaColor,foreground="#00fcee",font=("calibri",10))
-            claEntry.place(x=310,y=130)
+            claEntry.place(x=310,y=110)
             claEntry.configure(highlightthickness=2, highlightbackground="#00fcee")
 
             #Boton
-            Button(window2,text="Actualizar",width=10).place(x=380,y=200)
-            Button(window2,text="Eliminar",width=10).place(x=200 ,y=200)
+            Button(window2,text="Actualizar",width=10).place(x=380,y=170)
+            Button(window2,text="Eliminar",width=10).place(x=200 ,y=170)
 
-
-    
             def menu():
                 # crear la nueva ventana hija
                 window2.destroy()
-
-                # crear la nueva ventana hija
                 window=Tk()
                 window.title("Usuario")
                 window.geometry("700x500+500+50")
                 window.configure(background=pantllaColor)
                 window.resizable(width=False,height=False)
                 Label(window,text="DESHABILITAR-HABILITAR",font=30,background=pantllaColor,foreground="#00fcf1").pack()
-                
                 
                 # Nombre
                 Label(window,text="Nombre",font=5,pady=10,background=pantllaColor,foreground="#00fcf1").place(x=230,y=80)
@@ -217,11 +209,6 @@ class Visualizacion():
 
                 Button(window,text="Habilitar",width=10).place(x=290,y=200)
                 Button(window,text="Desabilitar",width=10).place(x=200 ,y=200)
-
-
-            
-
-
                 def salirChef():
                     window.destroy()
                 # agregar los widgets a la nueva ventana hija
@@ -250,21 +237,15 @@ class Visualizacion():
                 tabla.place(x=13,y=250)
 
             #Boton
-            Button(window2,text="Actualizar",width=10).place(x=380,y=200)
-            
+          
+        
 
-
-           
-
-
-            def salirCall():
+            Button(window2,text="ver menu",width=10,command=menu).place(x=290,y=170)
+            def salirChef():
                 window2.destroy()
             # agregar los widgets a la nueva ventana hija
-            boton3=Button(window2,text="salir",command=salirCall,cursor="hand2",width=10)
-            boton3.place(x=470,y=200)
-
-            Button(window2,text="ver menu",width=10,command=menu).place(x=290,y=200)
-
+            boton3=Button(window2,text="salir",command=salirChef,cursor="hand2",width=10)
+            boton3.place(x=470,y=170)
 
                 
             #Tblaaaaaaaaaaaaaaaaa-----------------------------------------------------------------------------------------------
@@ -281,25 +262,40 @@ class Visualizacion():
             
         
             tabla.heading(column="#0",text="")
-            tabla.heading(column="ID",text="ID")
-            tabla.heading(column="Nombre",text="Nombre")
-            tabla.heading(column="Apellido",text="Apellido")
-            tabla.heading(column="Edad",text="Edad")
-            tabla.heading(column="awdawd",text="awdawd")
-            tabla.heading(column="nada",text="nada")
+            tabla.heading(column="ID",text="#")
+            tabla.heading(column="Nombre",text="#")
+            tabla.heading(column="Apellido",text="#")
+            tabla.heading(column="Edad",text="#")
+            tabla.heading(column="awdawd",text="#")
+            tabla.heading(column="nada",text="#")
             tabla.pack()
-            tabla.place(x=13,y=250)
+            tabla.place(x=13,y=230)
             
             window2.mainloop()
+#-----------------------------------------------------------------------------------------------------------------------------------------
+        def  chefCocina1():
+            pass
+
+        def chefPlatos2():
+            pass
+
+        def chefNose():
+            pass
 
 
-            
-            
 
 
 
- 
 
+
+
+
+
+
+
+
+
+#-----------------------------------------------------------------------------------------------------------------------------------------            
         # TODO_ESTO PARA ABAJO ES DE LA VENTANA PRINCIPAL OJO SE TIENE QUE AREGLAR 
         # ALGUNAS COSAS YA QUE ESTAN DISPAREJAS(NO ESTAN RECTAS).
         # TODOLO lo  QUE QUERAMOS A SER, LO TENEMOS QUE CAMBIAR AQUI
