@@ -39,6 +39,7 @@ class Visualizacion():
             elif nombre=="v" and contraseña=="":
                 chef()
 
+
             
             else:
                 incorrecto=Label(ventana,text=" Usuario o contraseña incorrecta",fg="red",background=pantllaColor,font=("calibri",13))
@@ -175,7 +176,7 @@ class Visualizacion():
             window2.geometry("700x500+500+50")
             window2.configure(background=pantllaColor)
             window2.resizable(width=False,height=False)
-            Label(window2,text="CALL-CENTER",font=30,background=pantllaColor,foreground="#00fcf1").pack()
+            Label(window2,text="CHEF",font=30,background=pantllaColor,foreground="#00fcf1").pack()
             
             
             # Nombre
@@ -205,7 +206,7 @@ class Visualizacion():
                 window.geometry("700x500+500+50")
                 window.configure(background=pantllaColor)
                 window.resizable(width=False,height=False)
-                Label(window,text="deshabilitar/habilitar",font=30,background=pantllaColor,foreground="#00fcf1").pack()
+                Label(window,text="DESHABILITAR-HABILITAR",font=30,background=pantllaColor,foreground="#00fcf1").pack()
                 
                 
                 # Nombre
