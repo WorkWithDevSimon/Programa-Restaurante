@@ -33,11 +33,11 @@ class Visualizacion():
                 administrador()
             elif nombre=="" and contraseña=="":
                 chef()
-            elif nombre=="1" and contraseña=="2":
+            elif nombre=="tomas" and contraseña=="14":
                 chefCocina1()
-            elif nombre=="3" and contraseña=="4":
+            elif nombre=="lucas" and contraseña=="13":
                 chefPlatos2()
-            elif nombre=="5" and contraseña=="6":
+            elif nombre=="jose" and contraseña=="16":
                 chefNose()
            
 
@@ -192,29 +192,30 @@ class Visualizacion():
             Button(window2,text="Eliminar",width=10).place(x=200 ,y=170)
 
             def menu():
-                # crear la nueva ventana hija
                 window2.destroy()
-                window=Tk()
-                window.title("Usuario")
-                window.geometry("700x500+500+50")
-                window.configure(background=pantllaColor)
-                window.resizable(width=False,height=False)
-                Label(window,text="DESHABILITAR-HABILITAR",font=30,background=pantllaColor,foreground="#00fcf1").pack()
-                
+                ventanaMenu=Tk()
+                ventanaMenu.title("Usuario")
+                ventanaMenu.geometry("700x500+500+50")
+                ventanaMenu.configure(background=pantllaColor)
+                ventanaMenu.resizable(width=False,height=False)
+                Label(ventanaMenu,text="DESHABILITAR-HABILITAR",font=30,background=pantllaColor,foreground="#00fcf1").pack()
                 # Nombre
-                Label(window,text="Nombre",font=5,pady=10,background=pantllaColor,foreground="#00fcf1").place(x=230,y=80)
-                nomEntry=Entry(window,bg=pantllaColor,foreground="#00fcee",font=("calibri",10))
-                nomEntry.place(x=310,y=93)
+                Label(ventanaMenu,text="Codigo",font=5,pady=10,background=pantllaColor,foreground="#00fcf1").place(x=220,y=50)
+                nomEntry=Entry(ventanaMenu,bg=pantllaColor,foreground="#00fcee",font=("calibri",10))
+                nomEntry.place(x=290,y=64)
                 nomEntry.configure(highlightthickness=2, highlightbackground="#00fcee")
-
-                Button(window,text="Habilitar",width=10).place(x=290,y=200)
-                Button(window,text="Desabilitar",width=10).place(x=200 ,y=200)
+                #botones
+                Button(ventanaMenu,text="Habilitar",width=10).place(x=300,y=120)
+                Button(ventanaMenu,text="Desabilitar",width=10).place(x=210 ,y=120)
                 def salirChef():
-                    window.destroy()
-                # agregar los widgets a la nueva ventana hija
-                boton3=Button(window,text="salir",command=salirChef,cursor="hand2",width=10)
-                boton3.place(x=380,y=200)
-                tabla=Treeview(window)
+                    ventanaMenu.destroy()
+
+                #botones
+                boton3=Button(ventanaMenu,text="salir",command=salirChef,cursor="hand2",width=10)
+                boton3.place(x=390,y=120)
+                #tabal que ira dentro de menu
+                # --------------------------------
+                tabla=Treeview(ventanaMenu)
                 tabla["column"]=("ID","Nombre","Apellido","Edad","awdawd","nada")
                 #Definir tamaño
                 tabla.column(column="#0",width=10)
@@ -234,7 +235,111 @@ class Visualizacion():
                 tabla.heading(column="awdawd",text="awdawd")
                 tabla.heading(column="nada",text="nada")
                 tabla.pack()
-                tabla.place(x=13,y=250)
+                tabla.place(x=13,y=160)
+
+            #Boton
+            Button(window2,text="ver menu",width=10,command=menu).place(x=290,y=170)
+            def salirChef():
+                window2.destroy()
+            # agregar los widgets a la nueva ventana hija
+            boton3=Button(window2,text="salir",command=salirChef,cursor="hand2",width=10)
+            boton3.place(x=470,y=170)
+
+                
+            #Tblaaaaaaaaaaaaaaaaa-----------------------------------------------------------------------------------------------
+            tabla=Treeview(window2)
+            tabla["column"]=("ID","Nombre","Apellido","Edad","awdawd","nada")
+            #Definir tamaño
+            tabla.column(column="#0",width=10)
+            tabla.column(column="ID",width=110)
+            tabla.column(column="Nombre",width=110)
+            tabla.column(column="Apellido",width=110)
+            tabla.column(column="Edad",width=110)
+            tabla.column(column="awdawd",width=110)
+            tabla.column(column="nada",width=110)
+            
+        
+            tabla.heading(column="#0",text="")
+            tabla.heading(column="ID",text="#")
+            tabla.heading(column="Nombre",text="#")
+            tabla.heading(column="Apellido",text="#")
+            tabla.heading(column="Edad",text="#")
+            tabla.heading(column="awdawd",text="#")
+            tabla.heading(column="nada",text="#")
+            tabla.pack()
+            tabla.place(x=13,y=230)
+            
+            window2.mainloop()
+#-----------------------------------------------------------------------------------------------------------------------------------------
+        def  chefCocina1():
+            ventana.destroy()
+            window2=Tk()
+            window2.title("Usuario")
+            window2.geometry("700x500+500+50")
+            window2.configure(background=pantllaColor)
+            window2.resizable(width=False,height=False)
+            Label(window2,text="CHEFCOCINA",font=30,background=pantllaColor,foreground="#00fcf1").pack()
+            
+            # Nombre
+            Label(window2,text="Nombre",font=5,pady=10,background=pantllaColor,foreground="#00fcf1").place(x=230,y=60)
+            nomEntry=Entry(window2,bg=pantllaColor,foreground="#00fcee",font=("calibri",10))
+            nomEntry.place(x=310,y=73)
+            nomEntry.configure(highlightthickness=2, highlightbackground="#00fcee")
+            # clave
+            Label(window2,text="Clave",font=16,pady=10,background=pantllaColor,foreground="#00fcf1").place(x=250,y=96)
+            claEntry=Entry(window2,bg=pantllaColor,foreground="#00fcee",font=("calibri",10))
+            claEntry.place(x=310,y=110)
+            claEntry.configure(highlightthickness=2, highlightbackground="#00fcee")
+
+            #Boton
+            Button(window2,text="Actualizar",width=10).place(x=380,y=170)
+            Button(window2,text="Eliminar",width=10).place(x=200 ,y=170)
+
+            def menu():
+                window2.destroy()
+                ventanaMenu=Tk()
+                ventanaMenu.title("Usuario")
+                ventanaMenu.geometry("700x500+500+50")
+                ventanaMenu.configure(background=pantllaColor)
+                ventanaMenu.resizable(width=False,height=False)
+                Label(ventanaMenu,text="DESHABILITAR-HABILITAR",font=30,background=pantllaColor,foreground="#00fcf1").pack()
+                # Nombre
+                Label(ventanaMenu,text="Codigo",font=5,pady=10,background=pantllaColor,foreground="#00fcf1").place(x=220,y=50)
+                nomEntry=Entry(ventanaMenu,bg=pantllaColor,foreground="#00fcee",font=("calibri",10))
+                nomEntry.place(x=290,y=64)
+                nomEntry.configure(highlightthickness=2, highlightbackground="#00fcee")
+                #botones
+                Button(ventanaMenu,text="Habilitar",width=10).place(x=300,y=120)
+                Button(ventanaMenu,text="Desabilitar",width=10).place(x=210 ,y=120)
+                def salirChef():
+                    ventanaMenu.destroy()
+
+                #botones
+                boton3=Button(ventanaMenu,text="salir",command=salirChef,cursor="hand2",width=10)
+                boton3.place(x=390,y=120)
+                #tabal que ira dentro de menu
+                # --------------------------------
+                tabla=Treeview(ventanaMenu)
+                tabla["column"]=("ID","Nombre","Apellido","Edad","awdawd","nada")
+                #Definir tamaño
+                tabla.column(column="#0",width=10)
+                tabla.column(column="ID",width=110)
+                tabla.column(column="Nombre",width=110)
+                tabla.column(column="Apellido",width=110)
+                tabla.column(column="Edad",width=110)
+                tabla.column(column="awdawd",width=110)
+                tabla.column(column="nada",width=110)
+                
+            
+                tabla.heading(column="#0",text="")
+                tabla.heading(column="ID",text="ID")
+                tabla.heading(column="Nombre",text="Nombre")
+                tabla.heading(column="Apellido",text="Apellido")
+                tabla.heading(column="Edad",text="Edad")
+                tabla.heading(column="awdawd",text="awdawd")
+                tabla.heading(column="nada",text="nada")
+                tabla.pack()
+                tabla.place(x=13,y=160)
 
             #Boton
           
@@ -272,15 +377,228 @@ class Visualizacion():
             tabla.place(x=13,y=230)
             
             window2.mainloop()
-#-----------------------------------------------------------------------------------------------------------------------------------------
-        def  chefCocina1():
-            pass
+#----------------------------------------------------------------------------------------------------------------------------------------
 
         def chefPlatos2():
-            pass
+            ventana.destroy()
+            window2=Tk()
+            window2.title("Usuario")
+            window2.geometry("700x500+500+50")
+            window2.configure(background=pantllaColor)
+            window2.resizable(width=False,height=False)
+            Label(window2,text="CHEFPLATOS",font=30,background=pantllaColor,foreground="#00fcf1").pack()
+            
+            # Nombre
+            Label(window2,text="Nombre",font=5,pady=10,background=pantllaColor,foreground="#00fcf1").place(x=230,y=60)
+            nomEntry=Entry(window2,bg=pantllaColor,foreground="#00fcee",font=("calibri",10))
+            nomEntry.place(x=310,y=73)
+            nomEntry.configure(highlightthickness=2, highlightbackground="#00fcee")
+            # clave
+            Label(window2,text="Clave",font=16,pady=10,background=pantllaColor,foreground="#00fcf1").place(x=250,y=96)
+            claEntry=Entry(window2,bg=pantllaColor,foreground="#00fcee",font=("calibri",10))
+            claEntry.place(x=310,y=110)
+            claEntry.configure(highlightthickness=2, highlightbackground="#00fcee")
 
+            #Boton
+            Button(window2,text="Actualizar",width=10).place(x=380,y=170)
+            Button(window2,text="Eliminar",width=10).place(x=200 ,y=170)
+
+            def menu():
+                window2.destroy()
+                ventanaMenu=Tk()
+                ventanaMenu.title("Usuario")
+                ventanaMenu.geometry("700x500+500+50")
+                ventanaMenu.configure(background=pantllaColor)
+                ventanaMenu.resizable(width=False,height=False)
+                Label(ventanaMenu,text="DESHABILITAR-HABILITAR",font=30,background=pantllaColor,foreground="#00fcf1").pack()
+                # Nombre
+                Label(ventanaMenu,text="Codigo",font=5,pady=10,background=pantllaColor,foreground="#00fcf1").place(x=220,y=50)
+                nomEntry=Entry(ventanaMenu,bg=pantllaColor,foreground="#00fcee",font=("calibri",10))
+                nomEntry.place(x=290,y=64)
+                nomEntry.configure(highlightthickness=2, highlightbackground="#00fcee")
+                #botones
+                Button(ventanaMenu,text="Habilitar",width=10).place(x=300,y=120)
+                Button(ventanaMenu,text="Desabilitar",width=10).place(x=210 ,y=120)
+                def salirChef():
+                    ventanaMenu.destroy()
+
+                #botones
+                boton3=Button(ventanaMenu,text="salir",command=salirChef,cursor="hand2",width=10)
+                boton3.place(x=390,y=120)
+                #tabal que ira dentro de menu
+                # --------------------------------
+                tabla=Treeview(ventanaMenu)
+                tabla["column"]=("ID","Nombre","Apellido","Edad","awdawd","nada")
+                #Definir tamaño
+                tabla.column(column="#0",width=10)
+                tabla.column(column="ID",width=110)
+                tabla.column(column="Nombre",width=110)
+                tabla.column(column="Apellido",width=110)
+                tabla.column(column="Edad",width=110)
+                tabla.column(column="awdawd",width=110)
+                tabla.column(column="nada",width=110)
+                
+            
+                tabla.heading(column="#0",text="")
+                tabla.heading(column="ID",text="ID")
+                tabla.heading(column="Nombre",text="Nombre")
+                tabla.heading(column="Apellido",text="Apellido")
+                tabla.heading(column="Edad",text="Edad")
+                tabla.heading(column="awdawd",text="awdawd")
+                tabla.heading(column="nada",text="nada")
+                tabla.pack()
+                tabla.place(x=13,y=160)
+
+            #Boton
+          
+        
+
+            Button(window2,text="ver menu",width=10,command=menu).place(x=290,y=170)
+            def salirChef():
+                window2.destroy()
+            # agregar los widgets a la nueva ventana hija
+            boton3=Button(window2,text="salir",command=salirChef,cursor="hand2",width=10)
+            boton3.place(x=470,y=170)
+
+                
+            #Tblaaaaaaaaaaaaaaaaa-----------------------------------------------------------------------------------------------
+            tabla=Treeview(window2)
+            tabla["column"]=("ID","Nombre","Apellido","Edad","awdawd","nada")
+            #Definir tamaño
+            tabla.column(column="#0",width=10)
+            tabla.column(column="ID",width=110)
+            tabla.column(column="Nombre",width=110)
+            tabla.column(column="Apellido",width=110)
+            tabla.column(column="Edad",width=110)
+            tabla.column(column="awdawd",width=110)
+            tabla.column(column="nada",width=110)
+            
+        
+            tabla.heading(column="#0",text="")
+            tabla.heading(column="ID",text="#")
+            tabla.heading(column="Nombre",text="#")
+            tabla.heading(column="Apellido",text="#")
+            tabla.heading(column="Edad",text="#")
+            tabla.heading(column="awdawd",text="#")
+            tabla.heading(column="nada",text="#")
+            tabla.pack()
+            tabla.place(x=13,y=230)
+            
+            window2.mainloop()
+#----------------------------------------------------------------------------------------------------------------------------------------
         def chefNose():
-            pass
+            ventana.destroy()
+            window3 = Tk()
+            window3.title("Usuario")
+            window3.geometry("700x500+500+50")
+            window3.configure(background=pantllaColor)
+            window3.resizable(width=False, height=False)
+            Label(window3, text="CHEFNOSE", font=30, background=pantllaColor, foreground="#00fcf1").pack()
+
+            # Nombre
+            Label(window3, text="Nombre", font=5, pady=10, background=pantllaColor, foreground="#00fcf1").place(x=230, y=60)
+            nomEntry = Entry(window3, bg=pantllaColor, foreground="#00fcee", font=("calibri", 10))
+            nomEntry.place(x=310, y=73)
+            nomEntry.configure(highlightthickness=2, highlightbackground="#00fcee")
+
+            # clave
+            Label(window3, text="Clave", font=16, pady=10, background=pantllaColor, foreground="#00fcf1").place(x=250, y=96)
+            claEntry = Entry(window3, bg=pantllaColor, foreground="#00fcee", font=("calibri", 10))
+            claEntry.place(x=310, y=110)
+            claEntry.configure(highlightthickness=2, highlightbackground="#00fcee")
+
+            # Boton
+            def refrescar():
+                window3.destroy()
+                chefNose()
+            Button(window3, text="Actualizar", width=10, command=refrescar).place(x=380, y=170)
+
+
+            # Button(window3,text="Actualizar",width=10,command=refrescar).place(x=380,y=170)
+            Button(window3,text="Eliminar",width=10).place(x=200 ,y=170)
+
+            def menu():
+                window3.destroy()
+                ventanaMenu=Tk()
+                ventanaMenu.title("Usuario")
+                ventanaMenu.geometry("700x500+500+50")
+                ventanaMenu.configure(background=pantllaColor)
+                ventanaMenu.resizable(width=False,height=False)
+                Label(ventanaMenu,text="DESHABILITAR-HABILITAR",font=30,background=pantllaColor,foreground="#00fcf1").pack()
+                # Nombre
+                Label(ventanaMenu,text="Codigo",font=5,pady=10,background=pantllaColor,foreground="#00fcf1").place(x=220,y=50)
+                nomEntry=Entry(ventanaMenu,bg=pantllaColor,foreground="#00fcee",font=("calibri",10))
+                nomEntry.place(x=290,y=64)
+                nomEntry.configure(highlightthickness=2, highlightbackground="#00fcee")
+                #botones
+                Button(ventanaMenu,text="Habilitar",width=10).place(x=300,y=120)
+                Button(ventanaMenu,text="Desabilitar",width=10).place(x=210 ,y=120)
+                def salirChef():
+                    ventanaMenu.destroy()
+
+                #botones
+                boton3=Button(ventanaMenu,text="salir",command=salirChef,cursor="hand2",width=10)
+                boton3.place(x=390,y=120)
+                #tabal que ira dentro de menu
+                # --------------------------------
+                tabla=Treeview(ventanaMenu)
+                tabla["column"]=("ID","Nombre","Apellido","Edad","awdawd","nada")
+                #Definir tamaño
+                tabla.column(column="#0",width=10)
+                tabla.column(column="ID",width=110)
+                tabla.column(column="Nombre",width=110)
+                tabla.column(column="Apellido",width=110)
+                tabla.column(column="Edad",width=110)
+                tabla.column(column="awdawd",width=110)
+                tabla.column(column="nada",width=110)
+                
+            
+                tabla.heading(column="#0",text="")
+                tabla.heading(column="ID",text="ID")
+                tabla.heading(column="Nombre",text="Nombre")
+                tabla.heading(column="Apellido",text="Apellido")
+                tabla.heading(column="Edad",text="Edad")
+                tabla.heading(column="awdawd",text="awdawd")
+                tabla.heading(column="nada",text="nada")
+                tabla.pack()
+                tabla.place(x=13,y=160)
+
+            #Boton
+          
+        
+
+            Button(window3,text="ver menu",width=10,command=menu).place(x=290,y=170)
+            def salirChef():
+                window3.destroy()
+            # agregar los widgets a la nueva ventana hija
+            boton3=Button(window3,text="salir",command=salirChef,cursor="hand2",width=10)
+            boton3.place(x=470,y=170)
+
+                
+            #Tblaaaaaaaaaaaaaaaaa-----------------------------------------------------------------------------------------------
+            tabla=Treeview(window3)
+            tabla["column"]=("ID","Nombre","Apellido","Edad","awdawd","nada")
+            #Definir tamaño
+            tabla.column(column="#0",width=10)
+            tabla.column(column="ID",width=110)
+            tabla.column(column="Nombre",width=110)
+            tabla.column(column="Apellido",width=110)
+            tabla.column(column="Edad",width=110)
+            tabla.column(column="awdawd",width=110)
+            tabla.column(column="nada",width=110)
+            
+        
+            tabla.heading(column="#0",text="")
+            tabla.heading(column="ID",text="#")
+            tabla.heading(column="Nombre",text="#")
+            tabla.heading(column="Apellido",text="#")
+            tabla.heading(column="Edad",text="#")
+            tabla.heading(column="awdawd",text="#")
+            tabla.heading(column="nada",text="#")
+            tabla.pack()
+            tabla.place(x=13,y=230)
+            
+            window3.mainloop()
 
 
 
